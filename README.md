@@ -1,5 +1,4 @@
 # jq
-
 Conventional and type safe GopherJS bindings for jQuery, a fast, small, and feature-rich
 JavaScript library.
 
