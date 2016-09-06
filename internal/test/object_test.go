@@ -43,4 +43,4 @@ func TestJS(t *testing.T) {
 	}
 }
 
-var Global = &JS{}
+var Global = NewJS()

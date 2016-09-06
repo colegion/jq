@@ -19,6 +19,11 @@ type Call struct {
 	args   []interface{}
 }
 
+// NewJS allocated and returns a new JS object.
+func NewJS() *JS {
+	return &JS{}
+}
+
 // Get returns an Object containing information about
 // all the previous calls and the current one.
 func (o *JS) Get(key string) internal.Object {
