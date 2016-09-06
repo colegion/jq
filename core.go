@@ -34,6 +34,10 @@ func (o *Element) Object() interface{} {
 	return o.o
 }
 
+// Document is a type representing "document" in JavaScript.
+type Document struct {
+}
+
 // Q accepts a string containing a CSS selector and, optionally, a context
 // and uses the selector to match a set of elements.
 // Context is either a DOM Element or a jQuery object.
@@ -125,6 +129,29 @@ func QEmpty() *JQuery {
 // in JavaScript.
 func QFunc(callback func()) *JQuery {
 	return newJQuery([]interface{}{callback})
+}
+
+// QHTML creates DOM elements on the fly from the provided
+// string of raw HTML.
+// Optional argument owner of type Document is where the new elements
+// wil be created.
+// The first owner is the only one that is used, others will be ignored.
+// This function is an equivalent of jQuery( html [,ownerDocument] )
+// or $( html [,ownerDocument] ) in JavaScript.
+func QHTML(html string, owner ...Document) *JQuery {
+	if len(owner) == 0 {
+		return newJQuery([]interface{}{html})
+	}
+	return newJQuery([]interface{}{html, owner[0]})
+}
+
+// QHTMLAttrs is similar to QHTML but it expects a Plain attributes Object
+// as a second argument. The object may have attributes, events, and methods
+// to call on the newly-created element.
+// This function is an equivalent of jQuery( html, attributes ) or
+// $( html, attributes ) in JavaScript.
+func QHTMLAttrs(html string, attributes interface{}) *JQuery {
+	return newJQuery([]interface{}{html, attributes})
 }
 
 // newJQuery gets a slice of arguments, allocates a new JQuery
