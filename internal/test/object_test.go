@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/colegion/jq/internal"
+	"github.com/goaltools/jq/internal"
 )
 
 const incorrectCalls = "Incorrect list of calls. Expected %#v, got %#v."

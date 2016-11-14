@@ -1,7 +1,7 @@
 package test
 
 import (
-	"github.com/colegion/jq/internal"
+	"github.com/goaltools/jq/internal"
 )
 
 // JS implements an Object interface and is used for

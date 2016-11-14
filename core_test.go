@@ -3,7 +3,7 @@ package jq
 import (
 	"testing"
 
-	"github.com/colegion/jq/internal/test"
+	"github.com/goaltools/jq/internal/test"
 )
 
 func TestQ(t *testing.T) {

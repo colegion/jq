@@ -3,7 +3,7 @@
 package jq
 
 import (
-	"github.com/colegion/jq/internal"
+	"github.com/goaltools/jq/internal"
 )
 
 // Global is a container for a native object that
